@@ -17,7 +17,7 @@ namespace Full_GRASP_And_SOLID
 
         private static ArrayList toolCatalog = new ArrayList();
 
-        public static void Main(string[] args)
+        private static void Main(string[] args)
         {
             PopulateCatalogs();
             ConsolePrinter consolePrinter = new ConsolePrinter();

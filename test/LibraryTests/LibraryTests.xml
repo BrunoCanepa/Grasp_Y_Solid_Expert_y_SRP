@@ -4,5 +4,15 @@
         <name>LibraryTests</name>
     </assembly>
     <members>
+        <member name="M:Tests.BuildingTests.ConsolePrinterTest">
+            <summary>
+            Se testea el método GetBuildingText de Building, que es el mismo que imprime ConsolePrinter
+            </summary>
+        </member>
+        <member name="M:Tests.BuildingTests.ExceptionTest">
+            <summary>
+            Se testea si lanza una excepción al estar la lista de tareas vacía
+            </summary>
+        </member>
     </members>
 </doc>

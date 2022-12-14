@@ -5,7 +5,7 @@ namespace Full_GRASP_And_SOLID.Library;
 public class ConsolePrinter
 {
     public void PrintBuilding(Building building)
-        {
-            Console.WriteLine(building.GetBuildingText());
-        }
+    {
+        Console.WriteLine(building.GetBuildingText());
+    }
 }

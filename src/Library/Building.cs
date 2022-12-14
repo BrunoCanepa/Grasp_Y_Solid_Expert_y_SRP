@@ -46,6 +46,10 @@ namespace Full_GRASP_And_SOLID.Library
         // experta en información
         public double GetProductCost()
         {
+            if (tasks.Count == 0)
+            {
+                throw new EmptyTasksException("La lista de tareas está vacía");
+            }
             double costo = 0;
             foreach (Task task in this.tasks)
             {
