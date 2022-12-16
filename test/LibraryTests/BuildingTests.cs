@@ -4,6 +4,7 @@
 // </copyright>
 //--------------------------------------------------------------------------------
 using System;
+using System.IO;
 using System.Linq;
 using System.Collections;
 using Full_GRASP_And_SOLID.Library;
@@ -82,6 +83,19 @@ namespace Tests
             {
                 Assert.Pass();
             }
+        }
+        [Test]
+        public void FilePrinterTest()
+        {
+            FilePrinter filePrinter = new FilePrinter();
+            Building tower = new Building("Tower");
+            PopulateCatalogs();
+            tower.AddTask(new Task(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120));
+            tower.AddTask(new Task(GetProduct("Arena"), 200, GetEquipment("Hormigonera"), 120));
+            tower.AddTask(new Task(GetProduct("Tabla"), 50, GetEquipment("Martillo"), 15));
+            filePrinter.PrintBuilding(tower);
+            string textoImpreso = tower.GetTextToPrint();
+            Assert.AreEqual(File.ReadAllText(@"Building.txt"), textoImpreso);
         }
     }    
 }
