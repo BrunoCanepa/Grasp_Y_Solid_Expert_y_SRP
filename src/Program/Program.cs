@@ -21,11 +21,13 @@ namespace Full_GRASP_And_SOLID
         {
             PopulateCatalogs();
             ConsolePrinter consolePrinter = new ConsolePrinter();
+            FilePrinter filePrinter = new FilePrinter();
             Building tower = new Building("Tower");
             tower.AddTask(new Task(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120));
             tower.AddTask(new Task(GetProduct("Arena"), 200, GetEquipment("Hormigonera"), 120));
             tower.AddTask(new Task(GetProduct("Tabla"), 50, GetEquipment("Martillo"), 15));
             consolePrinter.PrintBuilding(tower);
+            filePrinter.PrintBuilding(tower);
         }
 
         private static void PopulateCatalogs()

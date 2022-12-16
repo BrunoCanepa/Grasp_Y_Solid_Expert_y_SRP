@@ -1,0 +1,5 @@
+Edificio Tower:
+100 de 'Cemento' usando 'Hormigonera' durante 120
+200 de 'Arena' usando 'Hormigonera' durante 120
+50 de 'Tabla' usando 'Martillo' durante 15
+Cuesta un total de: $335000
