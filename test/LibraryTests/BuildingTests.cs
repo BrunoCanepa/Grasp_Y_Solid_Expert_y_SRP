@@ -52,7 +52,7 @@ namespace Tests
         [Test]
         public void ConsolePrinterTest()
         {
-            ConsolePrinter consolePrinter = new ConsolePrinter();
+            IPrinter consolePrinter = new ConsolePrinter();
             Building tower = new Building("Tower");
             PopulateCatalogs();
             tower.AddTask(new Task(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120));
@@ -73,7 +73,7 @@ namespace Tests
         public void ExceptionTest()
         {
             Building castle = new Building("Castle");
-            ConsolePrinter consolePrinter = new ConsolePrinter();
+            IPrinter consolePrinter = new ConsolePrinter();
             try
             {
                 consolePrinter.PrintBuilding(castle);
@@ -87,7 +87,7 @@ namespace Tests
         [Test]
         public void FilePrinterTest()
         {
-            FilePrinter filePrinter = new FilePrinter();
+            IPrinter filePrinter = new FilePrinter();
             Building tower = new Building("Tower");
             PopulateCatalogs();
             tower.AddTask(new Task(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120));

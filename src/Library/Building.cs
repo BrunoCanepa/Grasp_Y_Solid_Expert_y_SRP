@@ -30,6 +30,10 @@ namespace Full_GRASP_And_SOLID.Library
         {
             this.tasks.Remove(task);
         }
+        /// <summary>
+        /// Devuelve una string de la construcción
+        /// </summary>
+        /// <returns></returns>
         public string GetTextToPrint()
         {
             List<string> StringBuildings = new List<string>();

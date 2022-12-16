@@ -4,5 +4,11 @@
         <name>Library</name>
     </assembly>
     <members>
+        <member name="M:Full_GRASP_And_SOLID.Library.Building.GetTextToPrint">
+            <summary>
+            Devuelve una string de la construcción
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>
