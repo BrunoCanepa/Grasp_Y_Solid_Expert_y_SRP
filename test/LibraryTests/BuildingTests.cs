@@ -54,9 +54,9 @@ namespace Tests
             ConsolePrinter consolePrinter = new ConsolePrinter();
             Building tower = new Building("Tower");
             PopulateCatalogs();
-            tower.AddTask(new Task(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120));
-            tower.AddTask(new Task(GetProduct("Arena"), 200, GetEquipment("Hormigonera"), 120));
-            tower.AddTask(new Task(GetProduct("Tabla"), 50, GetEquipment("Martillo"), 15));
+            tower.AddTask(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120);
+            tower.AddTask(GetProduct("Arena"), 200, GetEquipment("Hormigonera"), 120);
+            tower.AddTask(GetProduct("Tabla"), 50, GetEquipment("Martillo"), 15);
             consolePrinter.PrintBuilding(tower);
             string textoImpreso = tower.GetBuildingText();
             Assert.AreEqual("Edificio Tower:\n"                                     +
@@ -82,6 +82,18 @@ namespace Tests
             {
                 Assert.Pass();
             }
+        }
+        /// <summary>
+        /// Se testea que tower es quien crea la instancia de Task y no el program.
+        /// Se agrega una task, y se testea si el largo de la lista de tareas es 1
+        /// </summary>
+        [Test]
+        public void CreatorTest()
+        {
+            Building tower = new Building("Tower");
+            PopulateCatalogs();
+            tower.AddTask(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120);
+            Assert.AreEqual(1, tower.tasks.Count);
         }
     }    
 }
