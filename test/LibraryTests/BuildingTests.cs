@@ -95,5 +95,5 @@ namespace Tests
             tower.AddTask(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120);
             Assert.AreEqual(1, tower.tasks.Count);
         }
-    }    
+    }
 }
