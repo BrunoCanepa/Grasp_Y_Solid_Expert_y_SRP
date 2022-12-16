@@ -31,7 +31,11 @@ namespace Full_GRASP_And_SOLID.Library
         {
             this.tasks.Remove(task);
         }
-        public string GetBuildingText()
+        /// <summary>
+        /// Devuelve una string de la construcción
+        /// </summary>
+        /// <returns></returns>
+        public string GetTextToPrint()
         {
             List<string> StringBuildings = new List<string>();
             StringBuildings.Add($"Edificio {this.Description}:");

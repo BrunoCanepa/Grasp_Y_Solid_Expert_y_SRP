@@ -4,6 +4,7 @@
 // </copyright>
 //--------------------------------------------------------------------------------
 using System;
+using System.IO;
 using System.Linq;
 using System.Collections;
 using Full_GRASP_And_SOLID.Library;
@@ -51,14 +52,14 @@ namespace Tests
         [Test]
         public void ConsolePrinterTest()
         {
-            ConsolePrinter consolePrinter = new ConsolePrinter();
+            IPrinter consolePrinter = new ConsolePrinter();
             Building tower = new Building("Tower");
             PopulateCatalogs();
             tower.AddTask(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120);
             tower.AddTask(GetProduct("Arena"), 200, GetEquipment("Hormigonera"), 120);
             tower.AddTask(GetProduct("Tabla"), 50, GetEquipment("Martillo"), 15);
             consolePrinter.PrintBuilding(tower);
-            string textoImpreso = tower.GetBuildingText();
+            string textoImpreso = tower.GetTextToPrint();
             Assert.AreEqual("Edificio Tower:\n"                                     +
                             "100 de 'Cemento' usando 'Hormigonera' durante 120\n"   +
                             "200 de 'Arena' usando 'Hormigonera' durante 120\n"     +
@@ -72,7 +73,7 @@ namespace Tests
         public void ExceptionTest()
         {
             Building castle = new Building("Castle");
-            ConsolePrinter consolePrinter = new ConsolePrinter();
+            IPrinter consolePrinter = new ConsolePrinter();
             try
             {
                 consolePrinter.PrintBuilding(castle);
@@ -94,6 +95,19 @@ namespace Tests
             PopulateCatalogs();
             tower.AddTask(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120);
             Assert.AreEqual(1, tower.tasks.Count);
+        }    
+        [Test]
+        public void FilePrinterTest()
+        {
+            IPrinter filePrinter = new FilePrinter();
+            Building tower = new Building("Tower");
+            PopulateCatalogs();
+            tower.AddTask(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120);
+            tower.AddTask(GetProduct("Arena"), 200, GetEquipment("Hormigonera"), 120);
+            tower.AddTask(GetProduct("Tabla"), 50, GetEquipment("Martillo"), 15);
+            filePrinter.PrintBuilding(tower);
+            string textoImpreso = tower.GetTextToPrint();
+            Assert.AreEqual(File.ReadAllText(@"Building.txt"), textoImpreso);
         }
-    }
+    }    
 }

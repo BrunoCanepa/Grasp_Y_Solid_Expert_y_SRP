@@ -14,5 +14,11 @@
             Se testea si lanza una excepción al estar la lista de tareas vacía
             </summary>
         </member>
+        <member name="M:Tests.BuildingTests.CreatorTest">
+            <summary>
+            Se testea que tower es quien crea la instancia de Task y no el program.
+            Se agrega una task, y se testea si el largo de la lista de tareas es 1
+            </summary>
+        </member>
     </members>
 </doc>
