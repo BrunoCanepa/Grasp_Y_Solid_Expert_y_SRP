@@ -10,15 +10,28 @@ using System.Collections.Generic;
 
 namespace Full_GRASP_And_SOLID.Library
 {
+    /// <summary>
+    /// Clase de construcciones
+    /// </summary>
     public class Building : IStringBuilder
     {
+        /// <summary>
+        /// Lista de tareas 
+        /// </summary>
+        /// <returns></returns>
         public ArrayList tasks = new ArrayList();
-
+        /// <summary>
+        /// Constructor que le da un nombre al building
+        /// </summary>
+        /// <param name="name"></param>
         public Building(string name)
         {
             this.Description = name;
         }
-
+        /// <summary>
+        /// Descripción del building
+        /// </summary>
+        /// <value></value>
         public string Description { get; set; }
 
         public void AddTask(Supply material, double quantity, Tool equipment, int time)

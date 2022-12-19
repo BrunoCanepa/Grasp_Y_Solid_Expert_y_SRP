@@ -99,7 +99,7 @@ namespace Tests
         [Test]
         public void FilePrinterTest()
         {
-            IPrinter filePrinter = new FilePrinter();
+            IPrinter filePrinter = new FilePrinter("Tower");
             Building tower = new Building("Tower");
             PopulateCatalogs();
             tower.AddTask(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120);
@@ -107,7 +107,7 @@ namespace Tests
             tower.AddTask(GetProduct("Tabla"), 50, GetEquipment("Martillo"), 15);
             filePrinter.Print(tower);
             string textoImpreso = tower.GetTextToPrint();
-            Assert.AreEqual(File.ReadAllText(@"Building.txt"), textoImpreso);
+            Assert.AreEqual(File.ReadAllText(@"Tower.txt"), textoImpreso);
         }
     }    
 }

@@ -4,10 +4,102 @@
         <name>Library</name>
     </assembly>
     <members>
+        <member name="T:Full_GRASP_And_SOLID.Library.Building">
+            <summary>
+            Clase de construcciones
+            </summary>
+        </member>
+        <member name="F:Full_GRASP_And_SOLID.Library.Building.tasks">
+            <summary>
+            Lista de tareas 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.Building.#ctor(System.String)">
+            <summary>
+            Constructor que le da un nombre al building
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="P:Full_GRASP_And_SOLID.Library.Building.Description">
+            <summary>
+            Descripción del building
+            </summary>
+            <value></value>
+        </member>
         <member name="M:Full_GRASP_And_SOLID.Library.Building.GetTextToPrint">
             <summary>
             Devuelve una string de la construcción
             </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Full_GRASP_And_SOLID.Library.ConsolePrinter">
+            <summary>
+            Clase para imprimir en consola
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.ConsolePrinter.Print(Full_GRASP_And_SOLID.Library.IStringBuilder)">
+            <summary>
+            Imprime en consola el string (IStringBuilder) pasado como parámetro
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="T:Full_GRASP_And_SOLID.Library.FilePrinter">
+            <summary>
+            Clase que imprime en un archivo
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.FilePrinter.#ctor(System.String)">
+            <summary>
+            Constructor que se le pasa como parametro una string con la que se guarda el nombre del archivo.
+            </summary>
+            <param name="filename"></param>
+        </member>
+        <member name="P:Full_GRASP_And_SOLID.Library.FilePrinter.FileName">
+            <summary>
+            Variable de nombre del archivo
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.FilePrinter.Print(Full_GRASP_And_SOLID.Library.IStringBuilder)">
+            <summary>
+            Escribe el texto en un archivo el string (IStringBuilder) pasado como parámetro
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="T:Full_GRASP_And_SOLID.Library.IPrinter">
+            <summary>
+            Interfaz de todas las clases que imprimen en algún destino
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.IPrinter.Print(Full_GRASP_And_SOLID.Library.IStringBuilder)">
+            <summary>
+            Método que imprime.
+            Recibe como parámetro un IStringBuilder que contiene una string
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="T:Full_GRASP_And_SOLID.Library.IStringBuilder">
+            <summary>
+            Interfaz de texto a imprimir
+            </summary>
+        </member>
+        <member name="M:Full_GRASP_And_SOLID.Library.IStringBuilder.GetTextToPrint">
+            <summary>
+            Método que genera una string a imprimir
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:System.EmptyTasksException">
+            <summary>
+            Nueva excepción para tasks.
+            </summary>
+        </member>
+        <member name="M:System.EmptyTasksException.#ctor(System.String)">
+            <summary>
+            Excepción lanzada si la lista de tareas está vacía
+            </summary>
+            <param name="mensaje"></param>
             <returns></returns>
         </member>
     </members>
