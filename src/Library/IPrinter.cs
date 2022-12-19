@@ -3,5 +3,5 @@ namespace Full_GRASP_And_SOLID.Library;
 //otro para escribir en un archivo, tiene dos clases distintas para cada acción
 public interface IPrinter
 {
-    public void PrintBuilding(Building building);
+    public void PrintBuilding(IStringConverter text);
 }

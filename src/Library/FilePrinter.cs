@@ -3,8 +3,8 @@ namespace Full_GRASP_And_SOLID.Library;
 
 public class FilePrinter : IPrinter
 {
-    public void PrintBuilding(Building building)
+    public void PrintBuilding(IStringConverter text)
     {
-        File.WriteAllText("Building.txt", building.GetTextToPrint());
+        File.WriteAllText("Building.txt", text.GetTextToPrint());
     }
 }

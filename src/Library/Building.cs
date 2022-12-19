@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 namespace Full_GRASP_And_SOLID.Library
 {
-    public class Building
+    public class Building : IStringConverter
     {
         public ArrayList tasks = new ArrayList();
 

@@ -4,8 +4,8 @@ namespace Full_GRASP_And_SOLID.Library;
 // Se utiliza el principio SRP, ya que la clase ConsolePrinter tiene como única responsabilidad imprimir en consola el texto.
 public class ConsolePrinter : IPrinter
 {
-    public void PrintBuilding(Building building)
+    public void PrintBuilding(IStringConverter text)
     {
-        Console.WriteLine(building.GetTextToPrint());
+        Console.WriteLine(text.GetTextToPrint());
     }
 }
