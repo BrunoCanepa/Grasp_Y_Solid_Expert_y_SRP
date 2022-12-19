@@ -14,10 +14,19 @@
             Se testea si lanza una excepción al estar la lista de tareas vacía
             </summary>
         </member>
-        <member name="M:Tests.BuildingTests.CreatorTest">
+        <member name="M:Tests.BuildingTests.FilePrinterTest">
             <summary>
-            Se testea que tower es quien crea la instancia de Task y no el program.
-            Se agrega una task, y se testea si el largo de la lista de tareas es 1
+            Testea si se crea un archivo con el texto pasado
+            </summary>
+        </member>
+        <member name="M:Tests.BuildingTests.IStringBuilderTest">
+            <summary>
+            Se testea la llamada a un objeto building desde la Interfaz IStringBuilder
+            </summary>
+        </member>
+        <member name="M:Tests.BuildingTests.ICostableTest">
+            <summary>
+            Se testea llamar a un objeto Building desde la interfaz ICostable
             </summary>
         </member>
     </members>

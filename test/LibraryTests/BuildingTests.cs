@@ -7,6 +7,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Collections;
+using System.Collections.Generic;
 using Full_GRASP_And_SOLID.Library;
 using NUnit.Framework;
 
@@ -85,17 +86,8 @@ namespace Tests
             }
         }
         /// <summary>
-        /// Se testea que tower es quien crea la instancia de Task y no el program.
-        /// Se agrega una task, y se testea si el largo de la lista de tareas es 1
+        /// Testea si se crea un archivo con el texto pasado
         /// </summary>
-        [Test]
-        public void CreatorTest()
-        {
-            Building tower = new Building("Tower");
-            PopulateCatalogs();
-            tower.AddTask(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120);
-            Assert.AreEqual(1, tower.tasks.Count);
-        }    
         [Test]
         public void FilePrinterTest()
         {
@@ -108,6 +100,32 @@ namespace Tests
             filePrinter.Print(tower);
             string textoImpreso = tower.GetTextToPrint();
             Assert.AreEqual(File.ReadAllText(@"Tower.txt"), textoImpreso);
+        }
+        /// <summary>
+        /// Se testea la llamada a un objeto building desde la Interfaz IStringBuilder
+        /// </summary>
+        [Test]
+        public void IStringBuilderTest()
+        {
+            Building tower = new Building("Tower");
+            List<IStringBuilder> lista = new List<IStringBuilder>();
+            PopulateCatalogs();
+            tower.AddTask(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120);
+            IStringBuilder itower = tower;
+            Assert.AreEqual(itower.GetTextToPrint(), "Edificio Tower:\n100 de 'Cemento' usando 'Hormigonera' durante 120\nCuesta un total de: $130000");
+        }
+        /// <summary>
+        /// Se testea llamar a un objeto Building desde la interfaz ICostable
+        /// </summary>
+        [Test]
+        public void ICostableTest()
+        {
+            Building tower = new Building("Tower");
+            List<IStringBuilder> lista = new List<IStringBuilder>();
+            PopulateCatalogs();
+            tower.AddTask(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120);
+            ICostable itower = tower;
+            Assert.AreEqual(itower.GetProductCost(), 130000);
         }
     }    
 }
