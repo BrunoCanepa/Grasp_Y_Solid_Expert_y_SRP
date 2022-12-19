@@ -26,8 +26,8 @@ namespace Full_GRASP_And_SOLID
             tower.AddTask(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120);
             tower.AddTask(GetProduct("Arena"), 200, GetEquipment("Hormigonera"), 120);
             tower.AddTask(GetProduct("Tabla"), 50, GetEquipment("Martillo"), 15);
-            consolePrinter.PrintBuilding(tower);
-            filePrinter.PrintBuilding(tower);
+            consolePrinter.Print(tower);
+            filePrinter.Print(tower);
         }
 
         private static void PopulateCatalogs()

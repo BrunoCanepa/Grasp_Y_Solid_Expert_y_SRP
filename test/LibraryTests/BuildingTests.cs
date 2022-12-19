@@ -58,7 +58,7 @@ namespace Tests
             tower.AddTask(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120);
             tower.AddTask(GetProduct("Arena"), 200, GetEquipment("Hormigonera"), 120);
             tower.AddTask(GetProduct("Tabla"), 50, GetEquipment("Martillo"), 15);
-            consolePrinter.PrintBuilding(tower);
+            consolePrinter.Print(tower);
             string textoImpreso = tower.GetTextToPrint();
             Assert.AreEqual("Edificio Tower:\n"                                     +
                             "100 de 'Cemento' usando 'Hormigonera' durante 120\n"   +
@@ -76,7 +76,7 @@ namespace Tests
             IPrinter consolePrinter = new ConsolePrinter();
             try
             {
-                consolePrinter.PrintBuilding(castle);
+                consolePrinter.Print(castle);
                 Assert.Fail();
             }
             catch(EmptyTasksException)
@@ -105,7 +105,7 @@ namespace Tests
             tower.AddTask(GetProduct("Cemento"), 100, GetEquipment("Hormigonera"), 120);
             tower.AddTask(GetProduct("Arena"), 200, GetEquipment("Hormigonera"), 120);
             tower.AddTask(GetProduct("Tabla"), 50, GetEquipment("Martillo"), 15);
-            filePrinter.PrintBuilding(tower);
+            filePrinter.Print(tower);
             string textoImpreso = tower.GetTextToPrint();
             Assert.AreEqual(File.ReadAllText(@"Building.txt"), textoImpreso);
         }
